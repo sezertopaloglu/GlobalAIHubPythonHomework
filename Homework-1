@@ -1,0 +1,7 @@
+a = int(input("Bir sayi giriniz:"))
+b = int(input("Bir sayi giriniz:"))
+c = int(input("Bir sayi giriniz:"))
+d = int(input("Bir sayi giriniz:"))
+e = int(input("Bir sayi giriniz:"))
+print("{} {} {} {} {}".format(a,b,c,d,e))
+print(f'{a},{b},{c},{d},{e}')
