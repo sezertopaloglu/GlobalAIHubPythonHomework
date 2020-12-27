@@ -1,0 +1,27 @@
+Name = "Sezer"
+Surname = "Topaloğlu"
+
+turns = 3
+
+while True:
+    entered_name = input("Lutfen adinizi giriniz:")
+    entered_surname = input("Lutfen soyadinizi giriniz:")
+    if (Name != entered_name and Surname == entered_surname):
+        print("Tekrar deneyiniz:")
+        turns = turns - 1
+    elif (Name == entered_name and Surname != entered_surname):
+        print("Tekrar deneyiniz:")
+        turns = turns - 1
+    elif (Name != entered_name and Surname != entered_surname):
+        print("Tekrar deneyiniz:")
+        turns = turns - 1
+    else:
+        print("Hosgeldiniz:")
+        break
+
+    if turns == 0:
+        print("Giris hakkiniz bitti")
+        break
+        
+        
+        #kodun devami uzerinde calisiyorum..
