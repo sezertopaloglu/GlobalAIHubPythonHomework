@@ -1,27 +1,78 @@
-Name = "Sezer"
-Surname = "Topaloğlu"
+class Student:
+        liste = ["0-Matematik", "1-Geometri", "2-Fen", "3-Turkce", "4-Fizik"]
+        sozluk = {0:"Matematik", 1:"Geometri", 2:"Fen", 3:"Turkce", 4:"Fizik"}
+        grades = {}
+        ChoosenLessons = []
+        Name = "Sezer"
+        Surname = "Topaloğlu"
 
-turns = 3
 
-while True:
-    entered_name = input("Lutfen adinizi giriniz:")
-    entered_surname = input("Lutfen soyadinizi giriniz:")
-    if (Name != entered_name and Surname == entered_surname):
-        print("Tekrar deneyiniz:")
-        turns = turns - 1
-    elif (Name == entered_name and Surname != entered_surname):
-        print("Tekrar deneyiniz:")
-        turns = turns - 1
-    elif (Name != entered_name and Surname != entered_surname):
-        print("Tekrar deneyiniz:")
-        turns = turns - 1
-    else:
-        print("Hosgeldiniz:")
-        break
+        turns = 3
 
-    if turns == 0:
-        print("Giris hakkiniz bitti")
-        break
-        
-        
-        #kodun devami uzerinde calisiyorum..
+        while True:
+            entered_name = input("Lutfen adinizi giriniz:")
+            entered_surname = input("Lutfen soyadinizi giriniz:")
+            if (Name != entered_name and Surname == entered_surname):
+                print("Tekrar deneyiniz:")
+                turns = turns - 1
+            elif (Name == entered_name and Surname != entered_surname):
+                print("Tekrar deneyiniz:")
+                turns = turns - 1
+            elif (Name != entered_name and Surname != entered_surname):
+                print("Tekrar deneyiniz:")
+                turns = turns - 1
+            else:
+                print("Hosgeldiniz:")
+                break
+
+            if turns == 0:
+                print("Giris hakkiniz bitti")
+                break
+
+        print(liste)
+        print("You can take min 3 max 5 lesson, if you do not add lesson more press 5")
+
+        for i in range(len(liste)):
+            print("choose lesson from list")
+            a = str(input())
+            if(not(a.isspace())):
+                lesson = int(a)
+                if(lesson == 5):
+                     if(len(ChoosenLessons) < 3):
+                         print("You failed in the class because you did not pick more than 2 lessons")
+                         break
+                     else:
+                         break
+                elif(not(lesson > -1 and lesson < 6)):
+                  print("Try Again")
+                elif (not (lesson == 5)):
+                  ChoosenLessons.append((liste[lesson]))
+                else:
+                  break
+
+
+        print(ChoosenLessons)
+        print("Choosen one of the choosed lessons")
+        number = int(input())
+        ChossedLesson = sozluk[number]
+        print("Add Midterm")
+        grades['ChossedLesson.Midterm'] =input()
+        print("Add Final")
+        grades['ChossedLesson.Final'] = input()
+        print("Add Project")
+        grades['ChossedLesson.Project'] = input()
+
+        finalGrade = (float(grades["ChossedLesson.Midterm"]) * 0.3) + (float(grades["ChossedLesson.Final"]) * 0.5) + (float(grades["ChossedLesson.Project"]) * 0.2)
+
+        print(finalGrade)
+
+        if finalGrade > 90:
+            print("AA")
+        elif finalGrade > 70 and finalGrade <= 90:
+            print("BB")
+        elif finalGrade > 50 and finalGrade <= 70:
+            print("CC")
+        elif finalGrade > 30 and finalGrade <= 50:
+            print("DD")
+        else:
+            print("FF")
